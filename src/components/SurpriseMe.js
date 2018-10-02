@@ -2,8 +2,13 @@ import React from "react";
 
 import ActionButton from "./ActionButton";
 import Header from "./Header";
+import Options from "./Options";
 
 export default class SurpriseMe extends React.Component {
+  state = {
+    options: ["Thing 1", "Thing 2"]
+  };
+
   render() {
     const title = "SurpriseMe";
     const subtitle = "Can't make up your mind? We gotchu fam.";
@@ -12,7 +17,12 @@ export default class SurpriseMe extends React.Component {
       <div>
         <Header title={title} subtitle={subtitle} />
         <ActionButton />
+        <Options options={this.state.options} />
       </div>
     );
   }
 }
+
+SurpriseMe.defaultProps = {
+  options: []
+};
