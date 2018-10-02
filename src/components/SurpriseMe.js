@@ -1,5 +1,6 @@
 import React from "react";
 
+import ActionButton from "./ActionButton";
 import Header from "./Header";
 
 export default class SurpriseMe extends React.Component {
@@ -10,6 +11,7 @@ export default class SurpriseMe extends React.Component {
     return (
       <div>
         <Header title={title} subtitle={subtitle} />
+        <ActionButton />
       </div>
     );
   }
