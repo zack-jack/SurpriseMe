@@ -1,0 +1,20 @@
+/* BASE DOCUMENT STYLE RESET
+============================================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FONT SIZE TO BASE 10
+============================================================================ */
+html {
+  font-size: 62.5%;
+}
+
+/* BODY STYLING
+============================================================================ */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+}
