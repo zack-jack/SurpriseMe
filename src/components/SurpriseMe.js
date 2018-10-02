@@ -1,6 +1,7 @@
 import React from "react";
 
 import ActionButton from "./ActionButton";
+import AddOption from "./AddOption";
 import Header from "./Header";
 import Options from "./Options";
 
@@ -18,6 +19,7 @@ export default class SurpriseMe extends React.Component {
         <Header title={title} subtitle={subtitle} />
         <ActionButton />
         <Options options={this.state.options} />
+        <AddOption />
       </div>
     );
   }
