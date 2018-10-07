@@ -8,7 +8,7 @@ import SelectedOptionModal from "./SelectedOptionModal";
 
 export default class SurpriseMe extends React.Component {
   state = {
-    options: ["Thing 1", "Thing 2", "Thing 3"],
+    options: [],
     selectedOption: undefined
   };
 
@@ -43,6 +43,26 @@ export default class SurpriseMe extends React.Component {
 
     this.setState(prevState => ({ options: prevState.options.concat(option) }));
   };
+
+  componentDidMount() {
+    try {
+      const json = localStorage.getItem("options");
+      const options = JSON.parse(json);
+
+      if (options) {
+        this.setState(() => ({ options }));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem("options", json);
+    }
+  }
 
   render() {
     const title = "SurpriseMe";
