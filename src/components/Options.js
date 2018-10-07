@@ -6,7 +6,7 @@ const Options = props => (
   <div>
     <div>
       <h2>Options:</h2>
-      <button>Remove all</button>
+      <button onClick={props.handleDeleteAllOptions}>Remove all</button>
     </div>
     {props.options.length === 0 && <p>Add a few options to get started.</p>}
     {props.options.map(option => (

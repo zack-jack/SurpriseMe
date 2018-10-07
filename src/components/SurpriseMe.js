@@ -12,6 +12,10 @@ export default class SurpriseMe extends React.Component {
     selectedOption: undefined
   };
 
+  handleDeleteAllOptions = () => {
+    this.setState(() => ({ options: [] }));
+  };
+
   handleDeleteOption = optionToRemove => {
     this.setState(prevState => ({
       options: prevState.options.filter(option => optionToRemove !== option)
@@ -49,6 +53,7 @@ export default class SurpriseMe extends React.Component {
         />
         <Options
           options={this.state.options}
+          handleDeleteAllOptions={this.handleDeleteAllOptions}
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
