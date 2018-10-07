@@ -30,6 +30,10 @@ export default class SurpriseMe extends React.Component {
     }));
   };
 
+  handleClearSelectedOption = () => {
+    this.setState(() => ({ selectedOption: undefined }));
+  };
+
   handleAddOption = option => {
     if (!option) {
       return "Enter valid value to add an option.";
@@ -57,7 +61,10 @@ export default class SurpriseMe extends React.Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        <SelectedOptionModal selectedOption={this.state.selectedOption} />
+        <SelectedOptionModal
+          selectedOption={this.state.selectedOption}
+          handleClearSelectedOption={this.handleClearSelectedOption}
+        />
       </div>
     );
   }
