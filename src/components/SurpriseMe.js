@@ -26,6 +26,16 @@ export default class SurpriseMe extends React.Component {
     }));
   };
 
+  handleAddOption = option => {
+    if (!option) {
+      return "Enter valid value to add an option.";
+    } else if (this.state.options.indexOf(option) > -1) {
+      return "This option has already been entered.";
+    }
+
+    this.setState(prevState => ({ options: prevState.options.concat(option) }));
+  };
+
   render() {
     const title = "SurpriseMe";
     const subtitle = "Can't make up your mind? We gotchu fam.";
@@ -41,7 +51,7 @@ export default class SurpriseMe extends React.Component {
           options={this.state.options}
           handleDeleteOption={this.handleDeleteOption}
         />
-        <AddOption />
+        <AddOption handleAddOption={this.handleAddOption} />
         <SelectedOptionModal selectedOption={this.state.selectedOption} />
       </div>
     );
