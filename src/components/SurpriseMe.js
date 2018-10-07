@@ -12,6 +12,12 @@ export default class SurpriseMe extends React.Component {
     selectedOption: undefined
   };
 
+  handleDeleteOption = optionToRemove => {
+    this.setState(prevState => ({
+      options: prevState.options.filter(option => optionToRemove !== option)
+    }));
+  };
+
   handleOptionSelect = () => {
     const randomNum = Math.floor(Math.random() * this.state.options.length);
     const option = this.state.options[randomNum];
@@ -31,7 +37,10 @@ export default class SurpriseMe extends React.Component {
           hasOptionsCheck={this.state.options.length > 0}
           handleOptionSelect={this.handleOptionSelect}
         />
-        <Options options={this.state.options} />
+        <Options
+          options={this.state.options}
+          handleDeleteOption={this.handleDeleteOption}
+        />
         <AddOption />
         <SelectedOptionModal selectedOption={this.state.selectedOption} />
       </div>
