@@ -2,7 +2,12 @@ import React from "react";
 
 const ActionButton = props => (
   <div>
-    <button>Tell me what to do.</button>
+    <button
+      onClick={props.handleOptionSelect}
+      disabled={!props.hasOptionsCheck}
+    >
+      Tell me what to do.
+    </button>
   </div>
 );
 
