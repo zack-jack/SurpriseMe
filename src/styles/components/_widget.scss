@@ -1,0 +1,25 @@
+.widget {
+  background: $clouds;
+  margin-bottom: $xl-size;
+}
+
+.widget__message {
+  border-bottom: 1px solid darken($clouds, 5%);
+  color: $wet-asphalt;
+  margin: 0;
+  padding: $l-size;
+  text-align: center;
+}
+
+.widget-header {
+  background-color: $wet-asphalt;
+  color: $clouds;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $m-size;
+}
+
+.widget-header__title {
+  margin: 0;
+}

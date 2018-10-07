@@ -71,16 +71,20 @@ export default class SurpriseMe extends React.Component {
     return (
       <div>
         <Header title={title} subtitle={subtitle} />
-        <ActionButton
-          hasOptionsCheck={this.state.options.length > 0}
-          handleOptionSelect={this.handleOptionSelect}
-        />
-        <Options
-          options={this.state.options}
-          handleDeleteAllOptions={this.handleDeleteAllOptions}
-          handleDeleteOption={this.handleDeleteOption}
-        />
-        <AddOption handleAddOption={this.handleAddOption} />
+        <div className="container">
+          <ActionButton
+            hasOptionsCheck={this.state.options.length > 0}
+            handleOptionSelect={this.handleOptionSelect}
+          />
+          <div className="widget">
+            <Options
+              options={this.state.options}
+              handleDeleteAllOptions={this.handleDeleteAllOptions}
+              handleDeleteOption={this.handleDeleteOption}
+            />
+            <AddOption handleAddOption={this.handleAddOption} />
+          </div>
+        </div>
         <SelectedOptionModal
           selectedOption={this.state.selectedOption}
           handleClearSelectedOption={this.handleClearSelectedOption}
